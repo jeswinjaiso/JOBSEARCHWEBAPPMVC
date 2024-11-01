@@ -1,0 +1,46 @@
+﻿@model JOBSEARCHWEBAPPMVC.Models.JobCls
+@{
+    ViewBag.Title = "PostJob_PageLoad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>POST A JOB</h2>
+@using (Html.BeginForm("PostJob_Click", "PostJob", FormMethod.Post))
+{
+    <div>
+        @Html.TextBoxFor(m => m.Title, new { @placeholder = "TITLE" })
+        @Html.ValidationMessageFor(m => m.Title)
+
+    </div>
+    <div>
+        @Html.TextAreaFor(m => m.Desc, new { @placeholder = "DESCRIPTION" })
+        @Html.ValidationMessageFor(m => m.Desc)
+
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.Skills, new { @placeholder = "SKILLS" })
+        @Html.ValidationMessageFor(m => m.Skills)
+
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.Exp, new { @placeholder = "EXPERIENCE IN YEARS" })
+        @Html.ValidationMessageFor(m => m.Exp)
+
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.Salary, new { @placeholder = "SALARY" })
+        @Html.ValidationMessageFor(m => m.Salary)
+
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.EndDate,
+      new { type = "date" })
+
+    </div>
+    <div>
+        <input type="submit" text="submit" value="OK" />
+        @Html.DisplayFor(m => m.MSG)
+    </div>
+}
+
+

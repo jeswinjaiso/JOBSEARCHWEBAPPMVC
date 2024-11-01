@@ -1,0 +1,31 @@
+﻿@model JOBSEARCHWEBAPPMVC.Models.ComLoginCls
+@{
+    ViewBag.Title = "Login_PageLoad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>COMPONY LOGIN</h2>
+
+@using (Html.BeginForm("Login_Click", "CLogin", FormMethod.Get))
+{
+    <div>
+        <label>USERNAME:</label>
+        @Html.TextBoxFor(m => m.Username)
+        @*@Html.ValidationMessageFor(m => m.Name)*@
+    </div>
+    <div>
+        <label>PASSWORD:</label>
+        @Html.TextBoxFor(m => m.Password)
+        @*@Html.ValidationMessageFor(m => m.C_Type)*@
+    </div>
+    <div>
+        <input type="submit" value="ok" text="REGISTER" />
+        @Html.DisplayFor(m => m.Msg)
+    </div>
+    <div>
+        New Compony should  <a href="@Url.Action("Reg_PageLoad", "CRegistration")" class="elements">
+    <span>register here </span>
+</a>
+    </div>
+}
+

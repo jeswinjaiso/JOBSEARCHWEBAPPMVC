@@ -1,0 +1,70 @@
+﻿@model JOBSEARCHWEBAPPMVC.Models.ComponyCls
+
+
+
+@{
+    ViewBag.Title = "Reg_PageLoad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>COMPONY REGISTRATION</h2>
+
+<div>
+    @using (Html.BeginForm("Reg_Click", "CRegistration", FormMethod.Get))
+    {
+        <div>
+            <label>NAME OF THE COMPONY</label>
+            @Html.TextBoxFor(m => m.Name)
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+        <div>
+            <label>COMPONY TYPE:</label>
+            @Html.TextBoxFor(m => m.C_Type)
+            @Html.ValidationMessageFor(m => m.C_Type)
+        </div>
+        <div>
+            <label>ADDRESS OF THE COMPONY:</label>
+            @Html.TextBoxFor(m => m.Address)
+            @Html.ValidationMessageFor(m => m.Address)
+        </div>
+        <div>
+            <label>Phone Number:</label>
+            @Html.TextBoxFor(m => m.Phno)
+            @Html.ValidationMessageFor(m => m.Phno)
+        </div>
+
+        <div>
+            <label>EMAIL:</label>
+            @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+        @*<div>
+                @Html.TextBox("file", "", new { Type = "file" })
+            </div>*@
+        <div>
+            <label>USERNAME</label>
+            @Html.TextBoxFor(m => m.Username)
+            @Html.ValidationMessageFor(m => m.Username)
+        </div>
+        <div>
+            <label>PASSWORD</label>
+
+            @Html.PasswordFor(m => m.Password)
+
+        </div>
+
+        <div>
+            <label>CONFIRM PASSWORD</label>
+
+            @Html.PasswordFor(m => m.CPassword)
+            @Html.ValidationMessageFor(m => m.CPassword)
+        </div>
+        <div>
+            <input type="submit" value="ok" text="REGISTER" />
+            @Html.DisplayFor(m => m.AdMsg)
+        </div>
+        <div>
+
+        </div>
+    }
+</div>

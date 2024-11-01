@@ -1,0 +1,92 @@
+﻿@model IEnumerable<JOBSEARCHWEBAPPMVC.Models.GetJobDetCls>
+
+@{
+    ViewBag.Title = "Jobs_PageLoad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+
+}
+
+<br />
+<div>
+    @using (Html.BeginForm("Search", "UserJobDetails", FormMethod.Get))
+    {
+        @Html.TextBox("jbt", null, new { @class = "form-control", @placeholder = "DESIGNATION" })  @Html.TextBox("skills",null, new { @class = "form-control", @placeholder = "SKILLS" }) @Html.TextBox("exp", null, new { @class = "form-control", @placeholder = "EXPERIENCE" }) <input type="submit" value="ok" />
+    }
+</div>
+<p>
+</p>
+<h2>AVAILABLE JOBS:</h2>
+<h3></h3>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Skills)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Exp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skills)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Exp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+
+            <td>
+                @Html.ActionLink("Apply now", "Details", "Apply", new { id = item.CID }, null)
+
+            </td>
+        </tr>
+    }
+
+</table>

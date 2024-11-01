@@ -1,0 +1,67 @@
+﻿@model JOBSEARCHWEBAPPMVC.Models.UserReg
+@{
+    ViewBag.Title = "UserReg_PageLoad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserReg_PageLoad</h2>
+<div>
+    @using (Html.BeginForm("UserReg_Click", "UserReg", FormMethod.Get))
+    {
+        <div>
+            <label>NAME:</label>
+            @Html.TextBoxFor(m => m.Name)
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+        <div>
+            <label>Address:</label>
+            @Html.TextBoxFor(m => m.Address)
+            @Html.ValidationMessageFor(m => m.Address)
+        </div>
+        <div>
+            <label>Email:</label>
+            @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+        <div>
+            <label>Phone Number:</label>
+            @Html.TextBoxFor(m => m.Phno)
+            @Html.ValidationMessageFor(m => m.Phno)
+        </div>
+        <div>
+            <label>Qualification:</label>
+            @Html.TextBoxFor(m => m.Quali)
+            @Html.ValidationMessageFor(m => m.Quali)
+        </div>
+        <div>
+            <label>Skills:</label>
+            @Html.TextBoxFor(m => m.Skills)
+            @Html.ValidationMessageFor(m => m.Skills)
+        </div>
+        <div>
+            <label>Experience:</label>
+            @Html.TextBoxFor(m => m.Experience)
+            @Html.ValidationMessageFor(m => m.Experience)
+        </div>
+        <div>
+            <label>Username:</label>
+            @Html.TextBoxFor(m => m.Username)
+            @Html.ValidationMessageFor(m => m.Username)
+        </div>
+        <div>
+            <label>Password:</label>
+            @Html.PasswordFor(m => m.Password)
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+        <div>
+            <label>Confirm Password:</label>
+            @Html.PasswordFor(m => m.CPassword)
+            @Html.ValidationMessageFor(m => m.CPassword)
+        </div>
+        <div>
+            <input type="submit" value="ok" text="REGISTER" />
+            @Html.DisplayFor(m => m.Msg)
+        </div>
+    }
+</div>
+
